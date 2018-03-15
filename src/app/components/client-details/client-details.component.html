@@ -1,0 +1,69 @@
+<div class="row">
+  <div class="col-md-6">
+    <a routerLink="/" class="btn btn-lin"><i class="fa fa-arrow-circle-o-left">Back to Dashboard</i></a>
+  </div>
+  <div class="col-md-6">
+    <div class="btn-group pull-right">
+      <a [routerLink]="['/edit-client/'+id]" class="btn btn-secondary">Edit</a>
+      <button type="button" class="btn btn-danger" (click)="onDeleteClick()">Delete</button>
+    </div>
+  </div>
+</div>
+<hr>
+<!--Client Info  -->
+<div *ngIf="client" class="card">
+  <h3 class="card-header">{{client.firstName}} {{client.lastName}}</h3>
+  <div class="card-block">
+    <div class="row">
+      <div class="col-md-8">
+        <h4><strong>Client ID:</strong> {{client.$key}}</h4>
+      </div>
+      <div class="col-md-4">
+        <h3 class="pull-right">
+          Balance:
+          <span
+            [class.text-danger]="hasBalance"
+            [class.text-sucess]="!hasBalance"
+          >
+            {{ client.balance | currency:"USD": true }}
+          </span>
+          <small> 
+            <a (click)="showBalanceUpdateInput = !showBalanceUpdateInput">
+              <i class="fa fa-pencil"></i>
+            </a>
+          </small>
+        </h3>
+        <div class="clearfix">
+          <form 
+            *ngIf="showBalanceUpdateInput"
+            (submit)="updateBalance(id)"
+            class="form-inline pull-right">
+              <div class="form-group">
+                <input 
+                  type="text" 
+                  class="form-control" 
+                  [(ngModel)]="client.balance" 
+                  name="balance"
+                >
+              </div>
+              <button type="submit" class="btn btn-primary">Update</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <ul class="list-group">
+     <!-- <li class="list-group-item"><strong>Email:</strong> {{client.email}}</li>
+      <li class="list-group-item"><strong>Phone:</strong> {{client.phone}}</li> -->
+	  
+	  <li class="list-group-item"><strong>First Name :</strong> {{client.firstName}}</li>
+      <li class="list-group-item"><strong>Last Name :</strong> {{client.lastName}}</li>
+      <li class="list-group-item"><strong>Email :</strong> {{client.email}}</li>
+      <li class="list-group-item"><strong>Discription :</strong> {{client.description}}</li>
+      <li class="list-group-item"><strong>Status :</strong> {{client.status}}</li>
+      <li class="list-group-item"><strong>Created BY :</strong> {{client.CreatedBy}}</li>
+      <li class="list-group-item"><strong>Created Date :</strong> {{client.CreateDate}}</li>
+      <li class="list-group-item"><strong>Update By:</strong> {{client.updatedby}}</li>
+      <li class="list-group-item"><strong>Updated Date:</strong> {{client.Updated}}</li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,298 @@
+<div class="row">
+  <div class="col-md-6">
+    <a routerLink="/" href="#" class="btn btn-link"><i class="fa fa-arrow-circle-o-left"></i> Back To Dashboard</a>
+  </div>
+  <div class="col-md-6">
+    
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    Add Client
+  </div>
+  <!--<div class="card-block">
+    <form novalidate #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input 
+          type="text"
+          class="form-control"
+          [(ngModel)]="client.firstName"
+          name="firstName"
+          #clientFirstName="ngModel"
+          minlength="2"
+          required
+        >
+        <div *ngIf="clientFirstName.errors?.required && clientFirstName.touched" class="alert alert-danger">
+          First name is required
+        </div>
+        <div *ngIf="clientFirstName.errors?.minlength && clientFirstName.touched" class="alert alert-danger">
+          Must be at least 2 characters
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input 
+          type="text"
+          class="form-control"
+          [(ngModel)]="client.lastName"
+          name="lastName"
+          #clientLastName="ngModel"
+          minlength="2"
+          required
+        >
+        <div *ngIf="clientLastName.errors?.required && clientLastName.touched" class="alert alert-danger">
+          Last name is required
+        </div>
+        <div *ngIf="clientLastName.errors?.minlength && clientLastName.touched" class="alert alert-danger">
+          Must be at least 2 characters
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input 
+          type="email"
+          class="form-control"
+          [(ngModel)]="client.email"
+          name="email"
+          #clientEmail="ngModel"
+          minlength="2"
+          required
+        >
+        <div *ngIf="clientEmail.errors?.required && clientEmail.touched" class="alert alert-danger">
+          Email required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input 
+          type="text"
+          class="form-control"
+          [(ngModel)]="client.phone"
+          name="phone"
+          #clientPhone="ngModel"
+          minlength="10"
+          required
+        >
+        <div *ngIf="clientPhone.errors?.minlength && clientPhone.touched" class="alert alert-danger">
+          Add a valid phone number
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="balance">Balance</label>
+        <input 
+          type="number"
+          class="form-control"
+          [(ngModel)]="client.balance"
+          name="balance"
+          #clientBalance="ngModel"
+          [disabled]="disableBalanceOnAdd"
+        >    
+      </div>-->
+	  
+	  <div class="card-block">
+    <form novalidate #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input 
+          type="text"
+          class="form-control"
+          [(ngModel)]="client.firstName"
+          name="firstName"
+          #clientFirstName="ngModel"
+          minlength="2"
+          required
+        >
+        <div *ngIf="clientFirstName.errors?.required && clientFirstName.touched" class="alert alert-danger">
+          First name is required
+        </div>
+        <div *ngIf="clientFirstName.errors?.minlength && clientFirstName.touched" class="alert alert-danger">
+          Must be at least 2 characters
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input 
+          type="text"
+          class="form-control"
+          [(ngModel)]="client.lastName"
+          name="lastName"
+          #clientLastName="ngModel"
+          minlength="2"
+          required
+        >
+        <div *ngIf="clientLastName.errors?.required && clientLastName.touched" class="alert alert-danger">
+          Last name is required
+        </div>
+        <div *ngIf="clientLastName.errors?.minlength && clientLastName.touched" class="alert alert-danger">
+          Must be at least 2 characters
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input 
+          type="email"
+          class="form-control"
+          [(ngModel)]="client.email"
+          name="email"
+          #clientEmail="ngModel"
+          minlength="2"
+          required
+        >
+        <div *ngIf="clientEmail.errors?.required && clientEmail.touched" class="alert alert-danger">
+          Email required
+        </div>
+      </div>
+
+      <!-- <div class="form-group">
+        <label for="phone">Phone</label>
+        <input 
+          type="text"
+          class="form-control"
+          [(ngModel)]="client.phone"
+          name="phone"
+          #clientPhone="ngModel"
+          minlength="10"
+          required
+        >
+        <div *ngIf="clientPhone.errors?.minlength && clientPhone.touched" class="alert alert-danger">
+          Add a valid phone number
+        </div>
+      </div> -->
+      <div class="form-group">
+        <label for="status">Status</label>
+        <input 
+          type="text"
+          class="form-control"
+          [(ngModel)]="client.status"
+          name="status"
+          #clientstatus="ngModel"
+          minlength="2"
+          required
+        >
+        <div *ngIf="clientstatus.errors?.required && clientstatus.touched" class="alert alert-danger">
+          Valid Status
+        </div>
+        <div *ngIf="clientstatus.errors?.minlength && clientstatus.touched" class="alert alert-danger">
+          Must be vallid.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input 
+          type="text"
+          class="form-control"
+          [(ngModel)]="client.description"
+          name="description"
+          #clientdescription="ngModel"
+          minlength="2"
+          required
+        >
+        <div *ngIf="clientdescription.errors?.required && clientdescription.touched" class="alert alert-danger">
+          Valid Description.
+        </div>
+        <div *ngIf="clientdescription.errors?.minlength && clientdescription.touched" class="alert alert-danger">
+          Must be vallid Description.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="CreatedBy">Created By</label>
+        <input 
+          type="text"
+          class="form-control"
+          [(ngModel)]="client.CreatedBy"
+          name="CreatedBy"
+          #clientCreatedBy="ngModel"
+          minlength="2"
+          required
+        >
+        <div *ngIf="clientCreatedBy.errors?.required && clientCreatedBy.touched" class="alert alert-danger">
+          Must be filled
+        </div>
+        <div *ngIf="clientCreatedBy.errors?.minlength && clientCreatedBy.touched" class="alert alert-danger">
+          Must be filled
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="CreateDate">Create Date</label>
+        <input 
+          type="text"
+          class="form-control"
+          [(ngModel)]="client.CreateDate"
+          name="CreateDate"
+          #clientCreateDate="ngModel"
+          minlength="2"
+          required
+        >
+        <div *ngIf="clientCreateDate.errors?.required && clientCreateDate.touched" class="alert alert-danger">
+          Date is required
+        </div>
+        <div *ngIf="clientCreateDate.errors?.minlength && clientCreateDate.touched" class="alert alert-danger">
+          Must be fill mm/dd/yy format
+        </div>
+      </div>
+
+      <!-- <div class="form-group">
+        <label for="updatedby">Updated By</label>
+        <input 
+          type="text"
+          class="form-control"
+          [(ngModel)]="client.updatedby"
+          name="updatedby"
+          #clientupdatedby="ngModel"
+          minlength="2"
+          required
+        >
+        <div *ngIf="clientupdatedby.errors?.required && clientupdatedby.touched" class="alert alert-danger">
+          This  is required while Update.
+         </div>
+        <div *ngIf="clientupdatedby.errors?.minlength && clientupdatedby.touched" class="alert alert-danger">
+         Must be filled by user.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="Updated">Updated Date</label>   
+        <input 
+          type="text"
+          class="form-control"
+          [(ngModel)]="client.Updated"
+          name="Updated"
+          #clientUpdated="ngModel"
+          minlength="8"
+          required
+        >
+        <div *ngIf="clientUpdated.errors?.required && clientUpdated.touched" class="alert alert-danger">
+          Date is required
+        </div>
+        <div *ngIf="clientUpdated.errors?.minlength && clientUpdated.touched" class="alert alert-danger">
+          Must be fill mm/dd/yy format
+        </div>
+      </div> -->
+
+      <!-- <div class="form-group">
+        <label for="balance">Balance</label>
+        <input 
+          type="number"
+          class="form-control"
+          [(ngModel)]="client.balance"
+          name="balance"
+          #clientBalance="ngModel"
+          [disabled]="disableBalanceOnAdd"
+        >    
+      </div> -->
+
+      <input type="submit" class="btn btn-primary btn-block" value="Submit">
+    </form>
+  </div>
+</div>
